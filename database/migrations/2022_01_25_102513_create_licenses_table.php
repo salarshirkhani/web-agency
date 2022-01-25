@@ -1,0 +1,39 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateLicensesTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('licenses', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('panel_id')->nullable();
+            $table->foreign('panel_id')->references('id')->on('panels');
+            $table->string('site', 191)->nullable();
+            $table->string('token', 191)->nullable();
+            $table->string('end_date', 191)->nullable();
+            $table->string('price', 191)->nullable();
+            $table->string('status', 191)->nullable();
+            $table->string('paid', 191)->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('licenses');
+    }
+}

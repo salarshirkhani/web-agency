@@ -44,10 +44,10 @@ BY WEBITO
 </head>
 <style>
     .card-info:not(.card-outline) > .card-header {
-        background-color: #dc3545;
+        background-color: #57b846;
     }
     a {
-        color: #dc3545
+        color: #57b846
     }
     .content-wrapper {
         background: #f9f4f4;
@@ -79,9 +79,9 @@ BY WEBITO
     <aside class="main-sidebar sidebar-dark-gray elevation-4">
         <!-- Brand Logo -->
         <a href="{{ route('dashboard.index') }}" class="brand-link">
-            <img src="{{ asset("assets/images/logo.png") }}" alt="{{ config('app.name') }}" style=" width: auto;" class="brand-image "
+            <img src="{{ asset("assets/dashboard/img/arash-logo.png") }}" alt="{{ config('app.name') }}" style=" width: auto;" class="brand-image "
                  style="opacity: .8">
-            <span class="brand-text font-weight-light">Vinibo Panel</span>
+            <span class="brand-text font-weight-light">webito</span>
         </a>
 
         <!-- Sidebar -->
@@ -90,7 +90,7 @@ BY WEBITO
             <a href="#">
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{ !empty(Auth::user()->picture) ? Storage::url(Auth::user()->picture) : asset('assets/images/user.png') }}" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ !empty(Auth::user()->picture) ? Storage::url(Auth::user()->picture) : asset('assets/dashboard/img/avatar5.png') }}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <span class="d-block">{{ Auth::user()->name }}</a>
