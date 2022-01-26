@@ -19,7 +19,7 @@
     <div class="col-md-12">
         <x-card type="info">
             <x-card-header>License</x-card-header>
-        <form style="padding:10px;" action="{{ route('dashboard.admin.product.create') }}" method="post" role="form" class="form-horizontal " enctype="multipart/form-data">
+        <form style="padding:10px;" action="{{ route('dashboard.admin.license.create') }}" method="post" role="form" class="form-horizontal " enctype="multipart/form-data">
             <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" required  name="site"  placeholder="site">   
             <div class="form-group">
                 <label>End date:</label>
@@ -32,6 +32,11 @@
                 <!-- /.input group -->
             </div>
             <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" required name="price"  placeholder="price">
+            <select name="panel" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control">
+                @foreach ($panels as $item)
+                     <option value="{{$item->id}}">{{$item->site}}<option> 
+                @endforeach
+            </select>
             <select name="status" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control">
                 <option value="active">active<option>
                 <option value="deactive">deactive<option>

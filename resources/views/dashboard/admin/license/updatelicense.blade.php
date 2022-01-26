@@ -4,7 +4,7 @@
 @endsection
 @section('hierarchy')
     <x-breadcrumb-item title="Dashboard" route="dashboard.admin.index" />
-    <x-breadcrumb-item title="Edit Licenses" route="dashboard.admin.license.updateproduct" />
+    <x-breadcrumb-item title="Edit Licenses" route="dashboard.admin.license.updatelicense" />
 @endsection
 @section('content')
     @if(Session::has('info'))
@@ -33,10 +33,20 @@
                 <!-- /.input group -->
             </div>
             <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" required name="price" value="{{$post->price}}" placeholder="price">
+            <select name="panel" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control">
+                <option value="{{$post->panel_id}}">{{$post->panel->site}}<option>
+                @foreach ($panels as $item)
+                     <option value="{{$item->id}}">{{$item->site}}<option> 
+                @endforeach
+            </select>
             <select name="status" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control">
                 <option value="{{$post->status}}">{{$post->status}}<option>
                 <option value="active">active<option>
                 <option value="deactive">deactive<option>
+            </select>
+            <select name="paid" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control">
+                <option value="notpaid">notpaid<option>
+                <option value="paid">paid<option>
             </select>
             @csrf 
             <x-card-footer>

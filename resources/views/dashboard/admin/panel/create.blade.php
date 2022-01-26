@@ -4,7 +4,7 @@
 @endsection
 @section('hierarchy')
 <x-breadcrumb-item title="Dashboard" route="dashboard.admin.index" />
-<x-breadcrumb-item title="Add Page" route="dashboard.admin.pages.create" />
+<x-breadcrumb-item title="Add panel" route="dashboard.admin.panel.create" />
 @endsection
 @section('content')
 @if(Session::has('info'))
@@ -18,7 +18,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <div class="col-md-12">
         <x-card type="info">
-            <x-card-header>Pages</x-card-header>
+            <x-card-header>panel</x-card-header>
         <form style="padding:10px;" action="{{ route('dashboard.admin.panel.create') }}" method="post" role="form" class="form-horizontal " enctype="multipart/form-data">
             <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" required name="site"  placeholder="site">
             <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" required name="name"  placeholder="name">            

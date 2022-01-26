@@ -38,10 +38,10 @@
                                     <td>{{ $item->status }}</td>
                                     <td>{{ $item->paid }}</td>
                                     <td>
-                                    <a href="{{route('dashboard.admin.product.deleteproduct',['id'=>$item->id])}}" class="delete_post" ><i class="fa fa-fw fa-eraser"></i></a>                 
+                                    <a href="{{route('dashboard.admin.license.deletelicense',['id'=>$item->id])}}" class="delete_post" ><i class="fa fa-fw fa-eraser"></i></a>                 
                                     </td>
                                     <td>
-                                    <a href="{{route('dashboard.admin.product.updateproduct',['id'=>$item->id])}}" class="edit_post" target="_blank"><i class="fas fa-edit"></i></a>
+                                    <a href="{{route('dashboard.admin.license.updatelicense',['id'=>$item->id])}}" class="edit_post" target="_blank"><i class="fas fa-edit"></i></a>
                                     </td>
                                 </tr>
                              @endforeach
@@ -60,7 +60,7 @@
                     </div>
                     </x-card-body>
                 <x-card-footer>
-                    <a href="{{route('dashboard.admin.license.create')}}" class="btn btn-success">Add new product</a>
+                    <a href="{{route('dashboard.admin.license.create')}}" class="btn btn-success">Add new License</a>
                 </x-card-footer>      
         </x-card>
     </div>

@@ -58,7 +58,8 @@ class PanelController extends Controller
         $posts = panel::orderBy('created_at', 'desc')->get();
         return view('dashboard.admin.panel.manage', [
        'posts' => $posts,  
-        ]);
+       'users' =>User::orderBy('created_at', 'desc')->get(),
+    ]);
     }
 
     public function DeletePost($id){
@@ -70,8 +71,10 @@ class PanelController extends Controller
     public function GetEditPost($id)
     { 
         $post = panel::find($id);
-        return view('dashboard.admin.panel.updatelicense', [
+        return view('dashboard.admin.panel.updatepanel', [
         'post' => $post, 
+        'users' =>User::orderBy('created_at', 'desc')->get(),
+
          ]);
     }
 

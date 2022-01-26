@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ddd326e20695123396a9548f6292a7c3",
+    "content-hash": "1df89b819b3a2242f749aa393011466f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -196,6 +196,66 @@
                 "source": "https://github.com/dflydev/dflydev-dot-access-data/tree/v3.0.1"
             },
             "time": "2021-08-13T13:06:58+00:00"
+        },
+        {
+            "name": "dirape/token",
+            "version": "V2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mustafakhaleddev/laravel-token.git",
+                "reference": "653590e561641e94f04c40e3034c6cd3436cda7d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mustafakhaleddev/laravel-token/zipball/653590e561641e94f04c40e3034c6cd3436cda7d",
+                "reference": "653590e561641e94f04c40e3034c6cd3436cda7d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=4.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Dirape\\Token\\TokenServiceProvider"
+                    ],
+                    "aliases": {
+                        "Token": "Dirape\\Token\\Facades\\Facade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dirape\\Token\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "MustafaKhaled",
+                    "email": "MustafaKhaled.dev@gmail.com"
+                }
+            ],
+            "description": "Unique Token Generator For Laravel",
+            "keywords": [
+                "PHP token",
+                "generate",
+                "laravel",
+                "laravel token",
+                "token",
+                "token generator",
+                "unique token"
+            ],
+            "support": {
+                "issues": "https://github.com/mustafakhaleddev/laravel-token/issues",
+                "source": "https://github.com/mustafakhaleddev/laravel-token/tree/master"
+            },
+            "time": "2020-04-13T14:56:42+00:00"
         },
         {
             "name": "doctrine/inflector",
