@@ -36,6 +36,31 @@ Route::prefix('dashboard')
             ->namespace('Admin')
             ->group(function() {
                 Route::get('',  'IndexController@get')->name('index');
+                
+                //PRODUCT CONTROLLER
+                Route::post('product/create', ['uses' => 'ProductController@CreatePost','as' => 'product.create' ]);
+                Route::get('product/create', ['uses' => 'ProductController@GetCreatePost','as' => 'product.create']); 
+                Route::get('product/manage', 'ProductController@GetManagePost')->name('product.manage');
+                Route::get('deleteproduct/{id}','ProductController@DeletePost')->name('product.deleteproduct');  
+                Route::get('updateproduct/{id}','ProductController@GetEditPost')->name('product.updateproduct');
+                Route::post('updateproduct/{id}','ProductController@UpdatePost')->name('product.updateproduct');      
+                
+                //License CONTROLLER
+                Route::post('license/create', ['uses' => 'LicenseController@CreatePost','as' => 'license.create' ]);
+                Route::get('license/create', ['uses' => 'LicenseController@GetCreatePost','as' => 'license.create']); 
+                Route::get('license/manage', 'LicenseController@GetManagePost')->name('license.manage');
+                Route::get('deletelicense/{id}','LicenseController@DeletePost')->name('license.deletelicense');  
+                Route::get('updatelicense/{id}','LicenseController@GetEditPost')->name('license.updatelicense');
+                Route::post('updatelicense/{id}','LicenseController@UpdatePost')->name('license.updatelicense');      
+                
+                //PANELS CONTROLLER
+                Route::post('panel/create', ['uses' => 'LicenseController@CreatePost','as' => 'panel.create' ]);
+                Route::get('panel/create', ['uses' => 'LicenseController@GetCreatePost','as' => 'panel.create']); 
+                Route::get('panel/manage', 'LicenseController@GetManagePost')->name('panel.manage');
+                Route::get('deletepanel/{id}','LicenseController@DeletePost')->name('panel.deletepanel');  
+                Route::get('updatepanel/{id}','LicenseController@GetEditPost')->name('panel.updatepanel');
+                Route::post('updatepanel/{id}','LicenseController@UpdatePost')->name('panel.updatepanel');      
+                
 
             });
            
