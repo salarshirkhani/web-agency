@@ -23,13 +23,18 @@
             <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" required name="name"  value="{{$post->name}}"  placeholder="name">            
             <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" required name="email"  value="{{$post->email}}"  placeholder="email">
             <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" required name="phone"  value="{{$post->phone}}"  placeholder="phone">
+            <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" required name="percent"  value="{{$post->percent}}"  placeholder="percent">
             <select name="status" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control">
                 <option value="{{$post->status}}">{{$post->status}}<option>
                 <option value="active">active<option>
                 <option value="deactive">deactive<option>
             </select>
-            <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" required name="percent"  value="{{$post->percent}}"  placeholder="percent">
-            
+            <select name="user" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control">
+                <option value="{{$post->user_id}}">{{$post->user->name}}<option>
+                @foreach ($users as $item)
+                     <option value="{{$item->id}}">{{$item->name}}<option> 
+                @endforeach
+            </select>
             {{ csrf_field() }}
             <input type="hidden" name="id" value="{{$post->id}}">
              <x-card-footer>

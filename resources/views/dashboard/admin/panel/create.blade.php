@@ -24,15 +24,15 @@
             <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" required name="name"  placeholder="name">            
             <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" required name="email"  placeholder="email">
             <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" required name="phone"  placeholder="phone">
+            <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" required name="percent"  placeholder="percent">      
             <select name="status" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control">
                 <option value="active">active<option>
                 <option value="deactive">deactive<option>
             </select>
-            <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" required name="percent"  placeholder="percent">
-           
             <select name="user" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control">
-                <option value="publish">publish<option>
-                <option value="pending">pending<option>
+                @foreach ($users as $item)
+                     <option value="{{$item->id}}">{{$item->name}}<option> 
+                @endforeach
             </select>
             {{ csrf_field() }}
              <x-card-footer>
