@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use Laravel\Passport\Passport;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -28,5 +29,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('search-database', function (User $user) {
             return $user->type == 'customer';
         });
+        
+        if (! $this->app->routesAreCached()) {
+            Passport::routes();
+        }
     }
 }

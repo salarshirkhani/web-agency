@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\license;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,8 +13,13 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get('/licenses', function(){
-    return ['message' => 'hello'];
+Route::prefix('v1')->group(function() {
+
+    Route::get('/licenses', function(){
+        $posts = license::orderBy('created_at', 'desc')->get();
+        return  $posts;
+    });
+
 });
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
