@@ -39,7 +39,7 @@
             </select>
             <select name="product" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control">
                 @foreach ($products as $item)
-                     <option value="{{$item->id}}">{{$item->site}}<option> 
+                     <option value="{{$item->id}}">{{$item->name}}<option> 
                 @endforeach
             </select>
             <select name="status" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control">

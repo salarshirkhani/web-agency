@@ -44,10 +44,10 @@ BY WEBITO
 </head>
 <style>
     .card-info:not(.card-outline) > .card-header {
-        background-color: #57b846;
+        background-color: #20c5ba;
     }
     a {
-        color: #57b846
+        color: #20c5ba
     }
     .content-wrapper {
         background: #f9f4f4;

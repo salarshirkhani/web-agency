@@ -19,7 +19,17 @@ use Illuminate\Support\Str;
 class IndexController extends Controller
 {
     public function get() {
-        return view('dashboard.customer.index');
+        $panel=panel::where('user_id',Auth::user()->id)->orderBy('created_at', 'desc')->FIRST();
+        $posts = license::where('panel_id',$panel->id)->orderBy('created_at', 'desc')->get();
+        $income=0;
+        foreach($posts as $item){
+            $income=$item->price+$income;
+        }
+        return view('dashboard.customer.index',[
+            'posts' => $posts,  
+            'panel' =>$panel,
+            'income' =>$income,
+        ]);
     }  
 
     public function GetCreatePost()
