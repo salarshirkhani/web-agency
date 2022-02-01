@@ -2,7 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\license;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,10 +14,8 @@ use App\Models\license;
 */
 Route::prefix('v1')->group(function() {
 
-    Route::get('/licenses', function(){
-        $posts = license::orderBy('created_at', 'desc')->get();
-        return  $posts;
-    });
+    Route::resource('licenses','LicenseController');
+    Route::post('licenses/create','LicenseController@Create');      
 
 });
 

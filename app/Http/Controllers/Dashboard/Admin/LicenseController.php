@@ -34,6 +34,7 @@ class LicenseController extends Controller
     {
         $this->validate($request, [
             'site' => ['required', 'string', 'max:255'] ,
+            'panel_id' => ['required','exists:panels,id'],
         ]);
 
         $post = new license([
