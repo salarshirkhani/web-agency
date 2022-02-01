@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Dashboard\Customer;
 use App\Http\Controllers\Controller;
 use App\Models\product;
@@ -16,11 +15,12 @@ use Illuminate\Support\Facades\Storage;
 use DirapeToken;
 use Illuminate\Support\Str;
 
-class IndexController extends Controller
+class LicenseController extends Controller
 {
-    public function get() {
-        return view('dashboard.customer.index');
-    }  
+    public function __construct()
+    {
+        $this->authorizeResource(license::class, 'license');
+    }
 
     public function GetCreatePost()
     {
@@ -35,6 +35,7 @@ class IndexController extends Controller
 
         $this->validate($request, [
             'site' => ['required', 'string', 'max:255'] ,
+            'panel_id' => ['required','exists:panels,id'],
         ]);
 
         $post = new license([
@@ -56,10 +57,12 @@ class IndexController extends Controller
     public function GetManagePost(Request $request)
     {
         $panel=panel::where('user_id',Auth::user()->id)->orderBy('created_at', 'desc')->FIRST();
-        $posts = license::where('panel_id',$panel->id)->orderBy('created_at', 'desc')->get();
+        $posts = license::where('panel',$panel->id)->orderBy('created_at', 'desc')->get();
         return view('dashboard.customer.license.manage', [
         'posts' => $posts,  
         'panel' =>$panel,
         ]);
     }
+
+
 }

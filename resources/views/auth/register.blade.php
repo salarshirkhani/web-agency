@@ -10,7 +10,7 @@
     @endif
 
     <div class="login100-pic">
-        <img style="display:block ; margin-right:auto; margin-left:auto;" src="{{ asset("assets/images/logo.png") }}" alt="IMG">
+        <img style="display:block ; margin-right:auto; margin-left:auto;" src="{{ asset("assets/dashboard/img/arash-logo.png") }}" alt="IMG">
     </div>
 
 

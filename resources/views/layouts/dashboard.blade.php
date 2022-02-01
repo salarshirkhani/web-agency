@@ -109,9 +109,7 @@ BY WEBITO
         <!-- /.sidebar -->
     </aside>
 
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -125,11 +123,9 @@ BY WEBITO
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
+            </div>
         </div>
-        <!-- /.content-header -->
 
-        <!-- Main content -->
         <div class="content">
             @if ($errors->any())
                 <div class="row">
@@ -144,19 +140,16 @@ BY WEBITO
         </div>
         <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
 
-    <!-- Main Footer -->
     <footer class="main-footer">
         <!-- To the right -->
         <div class="float-right d-none d-sm-inline">
-            vinibo
+            Webito
         </div>
         <!-- Default to the left -->
         <strong>Copyright &copy; 2021.</strong> All rights reserved.
     </footer>
 </div>
-<!-- ./wrapper -->
 <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
     {{ csrf_field() }}
 </form>

@@ -27,6 +27,7 @@ class LicenseController extends Controller
     {
         return view('dashboard.admin.license.create',[
             'panels' =>panel::orderBy('created_at', 'desc')->get(),
+            'products' =>product::orderBy('created_at', 'desc')->get(),
         ]);
     }
 
@@ -35,6 +36,7 @@ class LicenseController extends Controller
         $this->validate($request, [
             'site' => ['required', 'string', 'max:255'] ,
             'panel_id' => ['required','exists:panels,id'],
+            'product' => ['required','exists:products,id'],
         ]);
 
         $post = new license([
@@ -44,6 +46,7 @@ class LicenseController extends Controller
             'status' => $request->input('status'),
             'end_date' => $request->input('end_date'),
             'panel_id' => $request->input('panel'),
+            'product_id' => $request->input('product'),
             'paid' => 'no',
             'token' => Str::random(32),
         ]);

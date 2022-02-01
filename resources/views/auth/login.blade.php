@@ -9,7 +9,7 @@
         </div>
     @endif
     <div class="login100-pic">
-        <img style="display:block ; margin-right:auto; margin-left:auto;" src="{{ asset("assets/images/logo.png") }}" alt="IMG">
+        <img style="display:block ; margin-right:auto; margin-left:auto;" src="{{ asset("assets/dashboard/img/arash-logo.png") }}" alt="IMG">
     </div>
 
     <form class="login100-form validate-form" action="{{ route('login') }}" method="POST">
@@ -24,7 +24,7 @@
             <span class="focus-input100"></span>
             <span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
-						</span>
+			</span>
         </div>
 
 

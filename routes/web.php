@@ -64,12 +64,17 @@ Route::prefix('dashboard')
 
             });
            
-         Route::prefix('customer')
+        Route::prefix('customer')
             ->name('customer.')
             ->middleware(['user_type:customer'])
             ->namespace('Customer')
             ->group(function() {
                 Route::get('',  'IndexController@get')->name('index');
+                //License CONTROLLER
+                Route::post('license/create', ['uses' => 'IndexController@CreatePost','as' => 'license.create' ]);
+                Route::get('license/create', ['uses' => 'IndexController@GetCreatePost','as' => 'license.create']); 
+                Route::get('license/manage', 'IndexController@GetManagePost')->name('license.manage');
+
 
             });
         

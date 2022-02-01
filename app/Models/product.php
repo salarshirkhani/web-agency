@@ -11,5 +11,7 @@ class product extends Model
     protected $table='products';
     protected $fillable=[ 'name' , 'description', 'price'];
 
-
+    public function license() {
+        return $this->hasMany('App\Models\license');
+    }
 }

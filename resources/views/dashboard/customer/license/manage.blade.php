@@ -1,10 +1,10 @@
 @extends('layouts.dashboard')
 @section('sidebar')
-    @include('dashboard.admin.sidebar')
+    @include('dashboard.customer.sidebar')
 @endsection
 @section('hierarchy')
     <x-breadcrumb-item title="Dashboard" route="dashboard.admin.index" />
-    <x-breadcrumb-item title="Manage License" route="dashboard.admin.license.manage" />
+    <x-breadcrumb-item title="Manage License" route="dashboard.customer.license.manage" />
 @endsection
 @section('content')
     @if(Session::has('info'))
@@ -26,9 +26,6 @@
                                 <th>token</th>
                                 <th>status</th>
                                 <th>paid</th>
-                                <th>Panel</th>
-                                <th>delete</th>                               
-                                <th>edit</th>
                             </tr>
                             </thead>
                                 <tbody>
@@ -38,13 +35,6 @@
                                     <td>{{ $item->token }}</td>
                                     <td>{{ $item->status }}</td>
                                     <td>{{ $item->paid }}</td>
-                                    <td>{{ $item->panel->name }}</td>
-                                    <td>
-                                    <a href="{{route('dashboard.admin.license.deletelicense',['id'=>$item->id])}}" class="delete_post" ><i class="fa fa-fw fa-eraser"></i></a>                 
-                                    </td>
-                                    <td>
-                                    <a href="{{route('dashboard.admin.license.updatelicense',['id'=>$item->id])}}" class="edit_post" target="_blank"><i class="fas fa-edit"></i></a>
-                                    </td>
                                 </tr>
                              @endforeach
                                 </tbody>
@@ -54,16 +44,13 @@
                                     <th>token</th>
                                     <th>status</th>
                                     <th>paid</th>
-                                    <th>Panel</th>
-                                    <th>delete</th>                               
-                                    <th>edit</th>
                                 </tr>
                                 </tfoot>
                         </table>
                     </div>
                     </x-card-body>
                 <x-card-footer>
-                    <a href="{{route('dashboard.admin.license.create')}}" class="btn btn-success">Add new License</a>
+                    <a href="{{route('dashboard.customer.license.create')}}" class="btn btn-success">Add new License</a>
                 </x-card-footer>      
         </x-card>
     </div>

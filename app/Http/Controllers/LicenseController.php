@@ -24,6 +24,8 @@ class LicenseController extends Controller
         $this->validate($request, [
             'site' => ['required', 'string', 'max:255'] ,
             'panel_id' => ['required','exists:panels,id'],
+            'product_id' => ['required','exists:products,id'],
+
         ]);
         $token=Str::random(32);
         $post = new license([
@@ -33,6 +35,7 @@ class LicenseController extends Controller
             'status' => 'active',
             'end_date' => $request->input('end_date'),
             'panel_id' => $request->input('panel_id'),
+            'product_id' => $request->input('product_id'),
             'paid' => 'no',
             'token' => $token,
         ]);
